@@ -1,0 +1,27 @@
+* {
+  user-select: none;
+  outline: none;
+  /* width */
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba($color: #fff, $alpha: 0);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 0.5em;
+  }
+}
+
+.cur-pointer,
+button,
+a {
+  cursor: pointer;
+}
+
+.no-shadow {
+  box-shadow: none;
+}
