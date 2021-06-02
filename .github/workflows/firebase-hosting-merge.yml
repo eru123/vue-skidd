@@ -6,6 +6,21 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - main
+
+env:
+  VUE_APP_TITLE: ${{ secrets.VUE_APP_TITLE }}
+  VUE_APP_SHORT: ${{ secrets.VUE_APP_SHORT }}
+  VUE_APP_DESCRIPTION: ${{ secrets.VUE_APP_DESCRIPTION }}
+  VUE_APP_HOST: ${{ secrets.VUE_APP_HOST }}
+  VUE_APP_FIREBASE_APIKEY: ${{ secrets.VUE_APP_FIREBASE_APIKEY }}
+  VUE_APP_FIREBASE_AUTHDOMAIN: ${{ secrets.VUE_APP_FIREBASE_AUTHDOMAIN }}
+  VUE_APP_FIREBASE_DATABASEURL: ${{ secrets.VUE_APP_FIREBASE_DATABASEURL }}
+  VUE_APP_FIREBASE_PROJECTID: ${{ secrets.VUE_APP_FIREBASE_PROJECTID }}
+  VUE_APP_FIREBASE_STORAGEBUCKET: ${{ secrets.VUE_APP_FIREBASE_STORAGEBUCKET }}
+  VUE_APP_FIREBASE_MESSAGINGSENDERID: ${{ secrets.VUE_APP_FIREBASE_MESSAGINGSENDERID }}
+  VUE_APP_FIREBASE_APPID: ${{ secrets.VUE_APP_FIREBASE_APPID }}
+  VUE_APP_FIREBASE_MEASUREMENTID: ${{ secrets.VUE_APP_FIREBASE_MEASUREMENTID }}
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -18,34 +33,8 @@ jobs:
           check-latest: true
       - name: Installing dependencies
         run: yarn install
-        env:
-          VUE_APP_TITLE: ${{ secrets.VUE_APP_TITLE }}
-          VUE_APP_SHORT: ${{ secrets.VUE_APP_SHORT }}
-          VUE_APP_DESCRIPTION: ${{ secrets.VUE_APP_DESCRIPTION }}
-          VUE_APP_HOST: ${{ secrets.VUE_APP_HOST }}
-          VUE_APP_FIREBASE_APIKEY: ${{ secrets.VUE_APP_FIREBASE_APIKEY }}
-          VUE_APP_FIREBASE_AUTHDOMAIN: ${{ secrets.VUE_APP_FIREBASE_AUTHDOMAIN }}
-          VUE_APP_FIREBASE_DATABASEURL: ${{ secrets.VUE_APP_FIREBASE_DATABASEURL }}
-          VUE_APP_FIREBASE_PROJECTID: ${{ secrets.VUE_APP_FIREBASE_PROJECTID }}
-          VUE_APP_FIREBASE_STORAGEBUCKET: ${{ secrets.VUE_APP_FIREBASE_STORAGEBUCKET }}
-          VUE_APP_FIREBASE_MESSAGINGSENDERID: ${{ secrets.VUE_APP_FIREBASE_MESSAGINGSENDERID }}
-          VUE_APP_FIREBASE_APPID: ${{ secrets.VUE_APP_FIREBASE_APPID }}
-          VUE_APP_FIREBASE_MEASUREMENTID: ${{ secrets.VUE_APP_FIREBASE_MEASUREMENTID }}
       - name: Build
         run: yarn build
-        env:
-          VUE_APP_TITLE: ${{ secrets.VUE_APP_TITLE }}
-          VUE_APP_SHORT: ${{ secrets.VUE_APP_SHORT }}
-          VUE_APP_DESCRIPTION: ${{ secrets.VUE_APP_DESCRIPTION }}
-          VUE_APP_HOST: ${{ secrets.VUE_APP_HOST }}
-          VUE_APP_FIREBASE_APIKEY: ${{ secrets.VUE_APP_FIREBASE_APIKEY }}
-          VUE_APP_FIREBASE_AUTHDOMAIN: ${{ secrets.VUE_APP_FIREBASE_AUTHDOMAIN }}
-          VUE_APP_FIREBASE_DATABASEURL: ${{ secrets.VUE_APP_FIREBASE_DATABASEURL }}
-          VUE_APP_FIREBASE_PROJECTID: ${{ secrets.VUE_APP_FIREBASE_PROJECTID }}
-          VUE_APP_FIREBASE_STORAGEBUCKET: ${{ secrets.VUE_APP_FIREBASE_STORAGEBUCKET }}
-          VUE_APP_FIREBASE_MESSAGINGSENDERID: ${{ secrets.VUE_APP_FIREBASE_MESSAGINGSENDERID }}
-          VUE_APP_FIREBASE_APPID: ${{ secrets.VUE_APP_FIREBASE_APPID }}
-          VUE_APP_FIREBASE_MEASUREMENTID: ${{ secrets.VUE_APP_FIREBASE_MEASUREMENTID }}
       - name: Deploy to firebase hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
