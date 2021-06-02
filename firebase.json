@@ -3,7 +3,8 @@
     "public": "dist",
     "ignore": [
       "**",
-      "!dist/**"
+      "!dist/**",
+      "!firebase.json"
     ],
     "rewrites": [
       {
