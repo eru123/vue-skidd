@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint --fix",
-    "deploy:firebase": "firebase deploy --only hosting"
+    "deploy:firebase": "yarn lint && yarn build && firebase deploy --only hosting"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
