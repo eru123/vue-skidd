@@ -2,9 +2,11 @@
   "hosting": {
     "public": "dist",
     "ignore": [
-      "**",
-      "!dist/**",
-      "!firebase.json"
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "**/public",
+      "**/src"
     ],
     "rewrites": [
       {
