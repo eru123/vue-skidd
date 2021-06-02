@@ -24,7 +24,10 @@ export default {
       const componentName = upperFirst(
         camelCase(fileName.replace("/^.//", "").replace(/\.\w+$/, ""))
       );
-      Vue.component(componentName, componentConfig.default || componentConfig);
+      Vue.component(
+        "Layout" + componentName,
+        componentConfig.default || componentConfig
+      );
     });
   },
 };
