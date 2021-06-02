@@ -1,6 +1,8 @@
 # vue-skidd
-
-## Project setup
+# Demo
+ - [Firebase Hosting](https://eru123-sc.web.app)
+# Project Setup
+### Install dependencies
 ```
 yarn install
 ```
@@ -19,6 +21,15 @@ yarn build
 ```
 yarn lint
 ```
-
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+# PWA
+### Generate PWA Assets - Icons
+ - To change app icon, replace `public/img/icon.png`
+ - Generate Icons
+```bash
+yarn generate:icons
+```
+ - Manually move the `public/img/icons/favicon.ico` to `public/favicon.ico`
+
