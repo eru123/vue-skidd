@@ -16,18 +16,5 @@ export default {
       );
       Vue.component(componentName, componentConfig.default || componentConfig);
     });
-
-    const layoutComponents = require.context("@/layouts", false, /[\w]+\.vue$/);
-
-    layoutComponents.keys().forEach((fileName) => {
-      const componentConfig = layoutComponents(fileName);
-      const componentName = upperFirst(
-        camelCase(fileName.replace("/^.//", "").replace(/\.\w+$/, ""))
-      );
-      Vue.component(
-        "Layout" + componentName,
-        componentConfig.default || componentConfig
-      );
-    });
   },
 };

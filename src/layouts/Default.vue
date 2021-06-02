@@ -1,6 +1,8 @@
 <template>
   <g-layout :left="right" :right="right">
-    <router-view />
+    <template #default>
+      <router-view></router-view>
+    </template>
   </g-layout>
 </template>
 <script>

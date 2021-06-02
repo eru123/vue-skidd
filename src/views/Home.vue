@@ -1,5 +1,5 @@
 <template>
-  <layout-default>
+  <div>
     <h1>Hello</h1>
     <div>
       <p>
@@ -39,15 +39,11 @@
         consequuntur quibusdam.
       </p>
     </div>
-  </layout-default>
+  </div>
 </template>
 
 <script>
-import LayoutDefault from "@/components/LayoutDefault";
 export default {
   name: "Home",
-  components: {
-    LayoutDefault,
-  },
 };
 </script>

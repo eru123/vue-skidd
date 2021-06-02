@@ -1,15 +1,20 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "@/views/Home.vue";
-import About from "@/views/About.vue";
-
+import LayoutHandler from "@/components/LayoutHandler";
+import Home from "@/views/Home";
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    component: LayoutHandler,
+    children: [
+      {
+        path: "",
+        name: "Home",
+        component: Home,
+      },
+    ],
   },
   {
     path: "/about",
@@ -17,7 +22,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: About,
+    component: LayoutHandler,
   },
 ];
 
