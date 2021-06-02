@@ -19,6 +19,8 @@ module.exports = {
     name: "SKIDD",
     themeColor: "#f1f1f1",
     msTileColor: "#f1f1f1",
-    assetsVersion: "v1",
+    assetsVersion: "1",
+    appleMobileWebAppCapable: "yes",
+    appleMobileWebAppStatusBarStyle: "black",
   },
 };
