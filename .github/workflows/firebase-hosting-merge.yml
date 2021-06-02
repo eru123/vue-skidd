@@ -17,11 +17,13 @@ jobs:
       - name: Build
         run: yarn build
       - name: Deploy to firebase hosting
-        uses: w9jds/firebase-action@master
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          args: deploy --only hosting
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ERU123_SC }}'
+          channelId: live
+          projectId: eru123-sc
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ERU123_SC }}
           VUE_APP_TITLE: ${{ secrets.VUE_APP_TITLE }}
           VUE_APP_SHORT: ${{ secrets.VUE_APP_SHORT }}
           VUE_APP_DESCRIPTION: ${{ secrets.VUE_APP_DESCRIPTION }}
