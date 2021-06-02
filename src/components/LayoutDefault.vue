@@ -4,11 +4,7 @@
   </g-layout>
 </template>
 <script>
-import GLayout from "@/components/GLayout";
 export default {
-  components: {
-    GLayout,
-  },
   data: () => ({
     right: [
       {
