@@ -15,4 +15,12 @@ module.exports = {
       return args;
     });
   },
+  pwa: {
+    name: "SKIDD",
+    themeColor: "#f1f1f1",
+    msTileColor: "#f1f1f1",
+    assetsVersion: "1",
+    appleMobileWebAppCapable: "yes",
+    appleMobileWebAppStatusBarStyle: "black",
+  },
 };
