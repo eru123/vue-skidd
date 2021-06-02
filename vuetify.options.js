@@ -7,7 +7,7 @@ export default function () {
       family: "Roboto",
     },
     icons: {
-      iconFont: "fa",
+      iconfont: "fa",
     },
     theme: {
       dark: false,

@@ -1,0 +1,9 @@
+<svg class="lds-swing" width="80px"  height="80px"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="51.4121" cy="51.4121" r="2.53333" fill="#e90c59">
+  <animate attributeName="cx" values="64.14213562373095;35.85786437626905;64.14213562373095" keyTimes="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" repeatCount="indefinite" begin="-0.25s"></animate>
+  <animate attributeName="cy" values="64.14213562373095;35.85786437626905;64.14213562373095" keyTimes="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" repeatCount="indefinite" begin="-0.25s"></animate>
+  <animate attributeName="r" values="10;2;10;2;10" keyTimes="0;0.25;0.5;0.75;1" dur="1s" repeatCount="indefinite" begin="-0.25s"></animate>
+</circle><circle cx="35.9501" cy="64.0499" r="9.46667" fill="#46dff0">
+  <animate attributeName="cx" values="35.85786437626905;64.14213562373095;35.85786437626905" keyTimes="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" repeatCount="indefinite" begin="0s"></animate>
+  <animate attributeName="cy" values="64.14213562373095;35.85786437626905;64.14213562373095" keyTimes="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" repeatCount="indefinite" begin="0s"></animate>
+  <animate attributeName="r" values="10;2;10;2;10" keyTimes="0;0.25;0.5;0.75;1" dur="1s" repeatCount="indefinite" begin="0s"></animate>
+</circle></svg>
