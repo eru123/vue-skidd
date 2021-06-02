@@ -1,6 +1,7 @@
 # vue-skidd
 # Demo
  - [Firebase Hosting](https://eru123-sc.web.app)
+ - [Vercel](https://skidd.vercel.app)
 # Project Setup
 ### Install dependencies
 ```
