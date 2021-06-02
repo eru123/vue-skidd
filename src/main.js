@@ -9,8 +9,6 @@ import "roboto-fontface/css/roboto/roboto-fontface.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import fire from "./plugins/fire";
 import config from "./plugins/config";
-import globalComponents from "./plugins/global-components";
-
 Vue.config.productionTip = false;
 
 Vue.use(fire, {
@@ -28,8 +26,6 @@ Vue.use(config, {
   short: process.env.VUE_APP_SHORT,
   title: process.env.VUE_APP_TITLE,
 });
-
-Vue.use(globalComponents);
 
 new Vue({
   router,
