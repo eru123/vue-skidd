@@ -14,7 +14,14 @@ jobs:
         uses: actions/checkout@v2
       - name: Installing dependencies
         run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Deploy to firebase hosting
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
         env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           VUE_APP_TITLE: ${{ secrets.VUE_APP_TITLE }}
           VUE_APP_SHORT: ${{ secrets.VUE_APP_SHORT }}
           VUE_APP_DESCRIPTION: ${{ secrets.VUE_APP_DESCRIPTION }}
@@ -27,13 +34,4 @@ jobs:
           VUE_APP_FIREBASE_MESSAGINGSENDERID: ${{ secrets.VUE_APP_FIREBASE_MESSAGINGSENDERID }}
           VUE_APP_FIREBASE_APPID: ${{ secrets.VUE_APP_FIREBASE_APPID }}
           VUE_APP_FIREBASE_MEASUREMENTID: ${{ secrets.VUE_APP_FIREBASE_MEASUREMENTID }}
-      - name: Build
-        run: yarn build
-      - name: Deploy to firebase hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ERU123_SC }}'
-          channelId: live
-          projectId: eru123-sc
         
