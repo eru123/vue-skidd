@@ -1,14 +1,10 @@
 <template>
   <g-layout :left="right" :right="right">
-    <router-view />
+    <slot />
   </g-layout>
 </template>
 <script>
-import GLayout from "@/components/GLayout";
 export default {
-  components: {
-    GLayout,
-  },
   data: () => ({
     right: [
       {
