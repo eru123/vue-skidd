@@ -6,6 +6,9 @@ const routes = [
   {
     path: "/",
     component: () => import("@/components/LayoutHandler"),
+    props: {
+      layout: "default",
+    },
     children: [
       {
         path: "",
@@ -15,7 +18,7 @@ const routes = [
       {
         path: "/about",
         name: "About",
-        component: () => import("@/views/Home"),
+        component: () => import("@/views/About"),
       },
       {
         path: "/test",

@@ -3,6 +3,7 @@
 </template>
 <script>
 import Default from "@/layouts/Default";
+import Plain from "@/layouts/Plain";
 export default {
   name: "LayoutHandler",
   props: {
@@ -14,6 +15,7 @@ export default {
   data: () => ({
     comps: {
       default: Default,
+      plain: Plain,
     },
   }),
 };

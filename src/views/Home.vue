@@ -45,5 +45,8 @@
 <script>
 export default {
   name: "Home",
+  created() {
+    this.setTitle("Home", this.$config.short);
+  },
 };
 </script>

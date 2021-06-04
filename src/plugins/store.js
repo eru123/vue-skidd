@@ -16,6 +16,7 @@ const state = {
   },
   isAuthLoaded: false,
   authenticated: false,
+  title: process.env.VUE_APP_TITLE,
 };
 
 const mutations = mutate(state);

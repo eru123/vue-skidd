@@ -9,6 +9,7 @@ import "roboto-fontface/css/roboto/roboto-fontface.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import fire from "./plugins/fire";
 import config from "./plugins/config";
+import lstore from "./plugins/lstore";
 import globalComponents from "./plugins/global-components";
 
 Vue.config.productionTip = false;
@@ -31,6 +32,7 @@ Vue.use(config, {
   version: require("../package.json").version,
 });
 
+Vue.use(lstore);
 Vue.use(globalComponents);
 
 new Vue({
