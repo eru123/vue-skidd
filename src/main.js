@@ -27,6 +27,8 @@ Vue.use(fire, {
 Vue.use(config, {
   short: process.env.VUE_APP_SHORT,
   title: process.env.VUE_APP_TITLE,
+  host: process.env.VUE_APP_HOST,
+  version: require("../package.json").version,
 });
 
 Vue.use(globalComponents);
