@@ -1,3 +1,5 @@
+const DumpVueEnvVarsWebpackPlugin = require("./vue-config/DumpVueEnvVarsWebpackPlugin.js");
+
 module.exports = {
   publicPath: process.env.NODE_ENV === "production" ? "/" : "/",
   productionSourceMap: false,
@@ -5,6 +7,7 @@ module.exports = {
     optimization: {
       splitChunks: false,
     },
+    plugins: [new DumpVueEnvVarsWebpackPlugin({ filename: "my-env-vars.js" })],
   },
   css: {
     extract: true,

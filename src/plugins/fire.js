@@ -3,6 +3,7 @@ import "firebase/auth";
 import "firebase/firestore";
 import "firebase/database";
 import "firebase/storage";
+import "firebase/messaging";
 
 const init = function (config) {
   // Initialize Firebase
@@ -15,6 +16,7 @@ const init = function (config) {
     database: firebase.database(),
     firestore: firebase.firestore(),
     storage: firebase.storage(),
+    messaging: firebase.messaging(),
   };
 };
 

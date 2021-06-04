@@ -1,91 +1,38 @@
 <template>
-  <v-list v-if="navitems" dense nav>
-    <div v-for="(item, key) in navitems" :key="key">
-      <!-- Link -->
-      <v-list-item v-if="item.type == 'link'" :to="item.to" router exact>
-        <v-list-item-action>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
+  <v-list v-if="items" dense nav>
+    <div v-for="(g, gk) in items" :key="gk">
+      <!-- conditional sidebar items  -->
+      <div>
+        <!-- mobile only sidebar items  -->
+        <div v-if="isMobile">
+          <list-parser v-if="g.type == 'main'" :items="g.items" />
+          <list-parser v-else-if="g.type == 'mobile'" :items="g.items" />
+        </div>
+        <!-- computer only sidebar -->
+        <div v-else>
+          <list-parser v-if="g.type == 'computer'" :items="g.items" />
+        </div>
+      </div>
 
-      <!-- Subheader  -->
-      <v-subheader v-else-if="item.type == 'header' && item.title">
-        {{ item.title }}
-      </v-subheader>
-
-      <!-- Divider  -->
-      <v-divider v-else-if="item.type == 'divider'" />
-
-      <!-- Component  -->
-      <div v-else-if="item.type == 'component' && item.component">
-        <component :is="item.component" />
+      <!-- global and static sidebar items -->
+      <div>
+        <list-parser v-if="g.type == 'more'" :items="g.items" />
+        <list-parser v-else-if="g.type == 'all'" :items="g.items" />
       </div>
     </div>
   </v-list>
 </template>
 <script>
+import ListParser from "@/components/NavbarListParser";
 export default {
   name: "NavbarList",
+  components: {
+    ListParser,
+  },
   props: {
     items: {
       type: Array,
       default: () => [],
-    },
-    more: {
-      type: Array,
-      default: () => [],
-    },
-  },
-  data: () => ({
-    navitems: [],
-    mobile: null,
-  }),
-  watch: {
-    items: {
-      handler: "itemsHandler",
-      immediate: true,
-    },
-    more: {
-      handler: "moreHandler",
-      immediate: true,
-    },
-    "$vuetify.breakpoint.mdAndDown": {
-      handler: "breakpointHandler",
-      immediate: true,
-    },
-  },
-  methods: {
-    itemsHandler(items) {
-      if (items.length > 0) {
-        const navitems = [];
-        const more = [];
-
-        items.forEach((item) => {
-          if (item.type === "more") {
-            item.items.forEach((i) => {
-              more.push(i);
-            });
-          } else {
-            navitems.push(item);
-          }
-        });
-
-        this.navitems = navitems.concat(more);
-      }
-    },
-    moreHandler(moreItems) {
-      moreItems.forEach(({ type, items }) => {
-        if (type === "more") {
-          this.itemsHandler(items);
-          return;
-        }
-      });
-    },
-    breakpointHandler(mobile) {
-      this.mobile = mobile;
     },
   },
 };

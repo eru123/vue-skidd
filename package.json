@@ -7,8 +7,9 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint --fix",
     "deploy:firebase": "yarn lint && yarn build && firebase deploy --only hosting",
+    "deploy:local": "yarn lint && yarn build && serve -s dist",
     "generate:icons": "npx vue-asset-generate -a public/img/icon.png -o public/img/icons --no-manifest",
-    "push": "yarn lint && git add . && git commit -am update && git push"
+    "push": "yarn lint && git add . && git commit -am update --no-verify && git push"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
