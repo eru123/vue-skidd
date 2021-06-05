@@ -1,4 +1,6 @@
-import { init, helper } from "@/lib/firebase";
+import fire from "@/lib/firebase";
+
+const { init, helper } = fire;
 
 export default {
   /*
