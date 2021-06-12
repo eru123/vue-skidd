@@ -1,11 +1,16 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+
+import LayoutHandler from "@/components/LayoutHandler";
+import Home from "@/views/Home";
+import About from "@/views/About";
+
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    component: () => import("@/components/LayoutHandler"),
+    component: LayoutHandler,
     props: {
       layout: "default",
     },
@@ -13,17 +18,17 @@ const routes = [
       {
         path: "",
         name: "Home",
-        component: () => import("@/views/Home"),
+        component: Home,
       },
       {
         path: "/about",
         name: "About",
-        component: () => import("@/views/About"),
+        component: About,
       },
       {
         path: "/test",
         name: "Test",
-        component: () => import("@/views/Home"),
+        component: Home,
       },
     ],
   },

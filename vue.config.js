@@ -1,4 +1,4 @@
-const DumpVueEnvVarsWebpackPlugin = require("./vue-config/DumpVueEnvVarsWebpackPlugin.js");
+// const DumpVueEnvVarsWebpackPlugin = require("./vue-config/DumpVueEnvVarsWebpackPlugin.js");
 
 module.exports = {
   publicPath: process.env.NODE_ENV === "production" ? "/" : "/",
@@ -7,10 +7,10 @@ module.exports = {
     optimization: {
       splitChunks: false,
     },
-    plugins: [new DumpVueEnvVarsWebpackPlugin({ filename: "my-env-vars.js" })],
+    // plugins: [new DumpVueEnvVarsWebpackPlugin({ filename: "my-env-vars.js" })],
   },
   css: {
-    extract: true,
+    extract: false,
   },
   chainWebpack: (config) => {
     config.plugin("html").tap((args) => {
@@ -23,5 +23,9 @@ module.exports = {
     themeColor: "#f1f1f1",
     msTileColor: "#f1f1f1",
     assetsVersion: require("./package.json").version,
+  },
+  integrity: true,
+  devServer: {
+    disableHostCheck: true,
   },
 };
