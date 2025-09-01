@@ -34,3 +34,6 @@ yarn generate:icons
 ```
  - Manually move the `public/img/icons/favicon.ico` to `public/favicon.ico`
 
+
+
+<!-- Security scan triggered at 2025-09-02 01:48:56 -->
